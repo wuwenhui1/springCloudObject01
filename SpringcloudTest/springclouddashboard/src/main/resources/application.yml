@@ -1,0 +1,17 @@
+server:
+  port: 8774
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/  # 注册中心
+
+spring:
+  application:
+    name: hystrix-dasboard #服务注册到Eureka上使用的名称
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "localhost"

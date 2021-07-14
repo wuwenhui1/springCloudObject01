@@ -1,0 +1,27 @@
+
+#server:
+#  port: 8771
+
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    serviceUrl:
+#      defaultZone: http://localhost:8762/eureka/  # ע������
+
+spring:
+  application:
+    name: eureka-client
+
+feign:
+  hystrix:
+    enabled: true
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: hystrix.stream
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"

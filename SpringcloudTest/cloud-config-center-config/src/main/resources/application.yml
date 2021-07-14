@@ -1,0 +1,28 @@
+server:
+  port: 8776
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wuwenhui1/Test.git #远程配置GIT仓库地址
+#          force-pull: true #强制从远程GIT仓库拉取数据到本地
+          search-paths:
+            - Test
+#            default-label: main  #加入这个配置就可以正常请求到git上的配置文件了
+          username: wuwenhui1  #自己的git帐号
+          password: w2548027479 #自己的git密码
+      label: main
+ribbon:
+  ReadTimeout: 70000
+  ConnectTimeout: 70000
